@@ -1,6 +1,5 @@
 
-
-WARNING: Pre-alpha-2. Do not use this in production. Only for testing.
+WARNING: Pre-alpha. Do not use this in production. Only for testing.
 
 
 # aws-k8s-tester
@@ -101,3 +100,4 @@ AWS_K8S_TESTER_EKS_KUBECTL_DOWNLOAD_URL=https://amazon-eks.s3-us-west-2.amazonaw
   AWS_K8S_TESTER_EKS_WORKER_NODE_ASG_DESIRED_CAPACITY=1 \
   ./tests/ginkgo.sh
 ```
+
