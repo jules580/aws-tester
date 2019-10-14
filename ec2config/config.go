@@ -255,7 +255,7 @@ const envPfx = "AWS_K8S_TESTER_EC2_"
 //  - make sure to check both
 var defaultConfig = Config{
 	EnvPrefix: envPfx,
-	AWSRegion: "us-west-2",
+	AWSRegion: "eu-west-2",
 
 	DestroyAfterCreate: false,
 	DestroyWaitTime:    time.Minute,
@@ -273,13 +273,13 @@ var defaultConfig = Config{
 	// Amazon Linux 2 AMI (HVM), SSD Volume Type
 	// NOTE: make sure to use the latest AMI for the region
 	// e.g. https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#LaunchInstanceWizard:
-	ImageID:  "ami-082b5a644766e0e6f",
-	UserName: "ec2-user",
-	Plugins: []string{
-		"update-amazon-linux-2",
-		"install-start-docker-amazon-linux-2",
+	ImageID:  "ami-72203456",
+	UserName: "outscale",
+	//Plugins: []string{
+	//	"update-amazon-linux-2",
+	//	"install-start-docker-amazon-linux-2",
 		// "install-kubeadm-amazon-linux-2-1.13.0",
-	},
+//	},
 
 	// Ubuntu Server 16.04 LTS, SSD Volume Type
 	// ImageID:  "ami-076e276d85f524150",
@@ -291,7 +291,7 @@ var defaultConfig = Config{
 	// },
 
 	// 2 vCPU, 8 GB RAM
-	InstanceType: "m5.large",
+	InstanceType: "t2.medium",
 	ClusterSize:  1,
 
 	AssociatePublicIPAddress: true,
@@ -299,7 +299,7 @@ var defaultConfig = Config{
 	KeyCreateSkip: false,
 	KeyCreated:    false,
 
-	VPCCIDR: "192.168.0.0/16",
+	VPCCIDR: "10.0.0.0/16",
 	IngressRulesTCP: map[string]string{
 		"22": "0.0.0.0/0",
 	},
