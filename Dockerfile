@@ -14,7 +14,7 @@
 
 # enpoint https://osu.eu-west-2.outscale.com
 
-FROM golang:1.12.7-stretch
+FROM golang:1.15-stretch
 RUN apt-get -y update && \
     apt-get -y install gdb jq awscli groff vim && \
     echo "add-auto-load-safe-path /usr/local/go/src/runtime/runtime-gdb.py" >> /root/.gdbinit
